@@ -22,15 +22,15 @@
       }
   
       .bg-c-blue {
-        background: #104f66;
+        background: #e1db75;
       }
   
       .bg-c-green {
-        background:#4C51BF;
+        background:#80bf4c;
       }
   
       .bg-c-yellow {
-        background: #53616e;
+        background: #ffd725;
       }
   
       .bg-c-pink {
@@ -41,7 +41,7 @@
       .card {
         
         -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
-        box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+        box-shadow: 0 1px 2.94px 0.06px rgba(15, 191, 255, 0.16);
         margin-bottom: 30px;
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
@@ -74,26 +74,24 @@
     <div class="row">
       
   
-      <div class="col-md-4 col-xl-6">
-        <div class="card bg-c-blue order-card">
-          <div class="card-block">
-            <h6 class="m-b-20">Available Exams</h6>
-           <h2 class="text-right"><i class="fas fa-book f-left"></i><span>{{total_course}}</span></h2>
-          </div>
+    <div class="col-md-4 col-xl-6">
+    <div class="card bg-c-blue order-card" style="background-image: url('https://cache.careers360.mobi/media/presets/860X430/article_images/2020/8/19/B-Com-Entrance-Examinations.webp'); background-size: cover; background-position: center; height: 300px;">
+        <div class="card-block">
+            <h6 class="m-b-20" >Available Exams</h6>
+            <h2 class="text-right"><i class="fas fa-book f-left"></i><span>{{total_course}}</span></h2>
         </div>
-      </div>
+    </div>
+</div>
+
   
-      <div class="col-md-4 col-xl-6">
-        <div class="card bg-c-yellow order-card">
-          <div class="card-block">
-            <h6 class="m-b-20">Total Questions</h6>
-            <h2 class="text-right"><i class="fas fa-question-circle f-left"></i><span>{{total_question}}</span></h2>
-            
-          </div>
-        </div>
-      </div>
+<div class="col-md-4 col-xl-6">
+  <div class="card bg-c-yellow order-card" style="background-image: url('https://www.newpathweb.com.au/wp-content/uploads/2013/09/question-mark-nothing-21.png'); background-size: cover; background-position: center; height: 300px;">
+    <div class="card-block">
+      <h6 class="m-b-20" style="color: rgb(0, 0, 0)">Total Questions</h6>
+      <h2 class="text-right"><i class="fas fa-question-circle f-left"  style="color: rgb(0, 0, 0)"></i><span style="color: rgb(0, 0, 0)">{{total_question}}</span></h2>
     </div>
   </div>
+</div>
 
 
 <br><br><br><br><br><br><br><br><br><br>

@@ -19,15 +19,21 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: "Gill Sans", sans-serif;;
+      font-family: "Gill Sans", sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url('https://marketingaccesspass.com/wp-content/uploads/2015/10/Podcast-Website-Design-Background-Image.jpg') no-repeat;
+      
+      /* Set minimum height of the body */
     }
 
     header {
       position: fixed;
-      padding: 20px;
+      padding: 5px;
       width: 100%;
       z-index: 1;
-      height: 5.8em !important;
+      height: 3.8em;
     }
 
     .left_area h3 {
@@ -38,14 +44,12 @@
     }
 
     .left_area span {
-      color: #19B3D3;
+      color: #d3a419;
     }
-
-
 
     .logout_btn {
       padding: 5px;
-      background: #ef5350;
+      background: #ff0400;
       text-decoration: none;
       float: right;
       margin-top: -30px;
@@ -55,26 +59,28 @@
       font-weight: 600;
       color: #fff;
       transition: 0.5s;
-
     }
 
     .logout_btn:hover {
-      background:#ca4745;
+      background: #ca4745;
     }
 
     .sidebar {
-      background: #2171b1;
-      margin-top: 5.8em;
+      background: linear-gradient(135deg, #ffaa00, #ffff00);
+      /* Gradient from orange to yellow */
+      margin-top: 3.8em;
       padding-top: 30px;
       position: fixed;
       left: 0;
       width: 250px;
       height: 100%;
-      transition: 0.5s;
+      transition: 1s;
       transition-property: left;
     }
 
+
     .sidebar .profile_image {
+
       width: 100px;
       height: 100px;
       border-radius: 100px;
@@ -96,12 +102,11 @@
       padding-left: 40px;
       box-sizing: border-box;
       transition: 0.5s;
-
     }
 
     .sidebar a:hover {
-      background:  #969696;
-      color:white;
+      background: #f8d407;
+      color: white;
     }
 
     .sidebar i {
@@ -139,11 +144,13 @@
 
     .content {
       margin-left: 250px;
-      background: url(background.png) no-repeat;
       background-position: center;
       background-size: cover;
-      height: 100vh;
+      flex-grow: 1;
+      /* Allow content to grow to fill remaining space */
       transition: 0.5s;
+      padding-bottom: 60px;
+      /* Add padding to accommodate footer */
     }
 
     #check:checked~.content {
@@ -153,12 +160,18 @@
     #check {
       display: none;
     }
-    .panel-primary{
-      border-color: #002a4e !important;
-    }
-    .panel-primary>.panel-heading {
-        background-color: #002a4e !important;
-        border-color: #002a4e !important;
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0px 0;
+      background-color: #000000;
+      color: #fff;
+      z-index: 999;
+      /* Ensure the footer stays on top of other content */
+      text-align: center;
     }
   </style>
 
@@ -172,31 +185,36 @@
 
   <input type="checkbox" id="check">
   <!--header area start-->
-  <header class="shadow bg-light">
+  <header class="shadow" style="background: linear-gradient(135deg, #ffaa00, #ffff00); padding: 0px 20px;">
     <label for="check">
-      <i style="left: 200px;margin-top: 17px;"class="fas fa-bars" id="sidebar_btn"></i>
+      <i style="margin-top: 10px;" class="fas fa-bars" id="sidebar_btn"></i>
     </label>
     <div class="left_area">
       <h3>Online Exam</h3>
     </div>
     <div class="right_area">
-      <a href="/logout" class="logout_btn" style="border-radius:0px;">Logout</a>
+      <a href="/logout" class="logout_btn" style="border-radius:10px;">Logout</a>
     </div>
   </header>
+
+
   <!--header area end-->
   <!--sidebar start-->
   <div class="sidebar">
     <center>
 
-      <img src="{% static "image/student.png" %}" class="profile_image" alt="">
-      <h4>{{request.user.first_name}}</h4>
-      <h6 style="color: rgb(255, 255, 255);">( Student )</h6>
+      <img src="{% static " image/student.png" %}" class="profile_image" alt="">
+      <h4 style="color: rgb(0, 0, 0);">{{request.user.first_name}}</h4>
+      <h6 style="color: rgb(0, 0, 0);">( Student )</h6>
 
     </center>
 
-    <a href="/student/student-dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
-    <a href="/student/student-exam"><i class="fas fa-book"></i><span>Examination</span></a>
-    <a href="/student/student-marks"><i class="fas fa-sort-numeric-up"></i><span>My Marks</span></a>
+    <a href="/student/student-dashboard"><i class="fas fa-tachometer-alt" style="color: rgb(0, 0, 0);"></i><span
+        style="color: rgb(0, 0, 0);">Dashboard</span></a>
+    <a href="/student/student-exam"><i class="fas fa-book" style="color: rgb(0, 0, 0);"></i><span
+        style="color: rgb(0, 0, 0);">Examination</span></a>
+    <a href="/student/student-marks"><i class="fas fa-sort-numeric-up" style="color: rgb(0, 0, 0);"></i><span
+        style="color: rgb(0, 0, 0);">My Marks</span></a>
   </div>
   <!--sidebar end-->
 
@@ -210,9 +228,15 @@
 
 
     <br><br><br>
-    {% include "exam/footer.html" %}
   </div>
   <!--content end-->
+
+  <!--footer-->
+  <footer>
+    <p>Copyright &copy; Online Examination System - {% now 'Y' %}</p>
+  </footer>
+  <!--footer end-->
+
 </body>
 
 </html>

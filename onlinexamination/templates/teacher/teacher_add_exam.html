@@ -14,10 +14,25 @@
   a:link {
         text-decoration: none;
       }
+      body {
+            background-color: yellow; /* Adding yellow background */
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.5); /* Setting form background with slight opacity */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1); /* Adding a slight blur effect */
+        }
+
+        label {
+            color: black; /* Setting label text color */
+            opacity: 1; /* Making text full opacity */
+        }
     
   </style>
 </head>
-<h2 style="text-align:center; ">Add Course Info</h2>
+<h2 style="text-align:center; color: rgb(255, 255, 255)" >Add Course Info</h2>
 <form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
     {%csrf_token%}
     <div class="form-group">

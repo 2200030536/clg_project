@@ -16,14 +16,18 @@
     Social section
     -----------------------------------------*/
     footer {
-      padding: 0px ;
-      background-color: #212529;
-      color: #fff;
+      padding: 10px 0; /* Adjust the padding */
+      background-color: #000000; /* Change background color to black */
+      color: #ffffff; /* Change text color to white */
       margin-top: auto; /* Push the footer to the bottom */
+      position: fixed; /* Stick the footer to the bottom */
+      left: 0;
+      bottom: 0;
+      width: 100%;
     }
 
     .fa {
-      padding: 20px;
+      padding: 10px;
       font-size: 23px;
       width: 60px;
       text-align: center;
@@ -39,6 +43,7 @@
 
     p {
       text-align: center;
+      margin: 0; /* Remove default margin */
     }
   </style>
 </head>
@@ -52,7 +57,7 @@
           <div class="wow fadeInUp footer-copyright">
             <p>
               Copyright &copy; Online Examination System - {% now 'Y' %}
-            </p><br>
+            </p>
           </div>
         </div>
       </div>
